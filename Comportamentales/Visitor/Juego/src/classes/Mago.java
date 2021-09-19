@@ -1,7 +1,7 @@
 package classes;
 
-import Interfaces.IPersonaje;
-import Interfaces.IVisitor;
+import interfaces.IPersonaje;
+import interfaces.IVisitor;
 
 public class Mago implements IPersonaje {
         

@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import Interfaces.IPersonaje;
-import Interfaces.IVisitor;
 import classes.EquiparArma;
 import classes.Guerrero;
 import classes.Mago;
+import interfaces.IPersonaje;
+import interfaces.IVisitor;
 
 public class App {
     public static void main(String[] args) throws Exception {

@@ -2,8 +2,8 @@ package classes;
 
 import java.util.List;
 
-import Interfaces.IPersonaje;
-import Interfaces.IVisitor;
+import interfaces.IPersonaje;
+import interfaces.IVisitor;
 
 public class EquiparArma implements IVisitor {
 
