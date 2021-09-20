@@ -38,9 +38,13 @@ public class Articulo implements IElemento{
         this.unidades = unidades;
     }
 
-    // aceptamos al visitor en esta clase
-    public void aceptar(IVisitor visitor){
+    @Override
+    public void aceptar(IVisitor visitor) {
         visitor.visit(this);
+        
     }
+
+    // aceptamos al visitor en esta clase
+    
     
 }

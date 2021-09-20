@@ -15,8 +15,7 @@ public class Mostrar implements IVisitor {
     @Override
     public void visit(Articulo articulo) {
         
-        System.out.println("=========================");
-        System.out.println( "Factura número [" + articulo.getUnidades() + "]" );
+        System.out.println( "Artículo [" + articulo.getNombre() + "] --> [" + articulo.getUnidades() + "] unidades)" );
 
     }
     
