@@ -5,9 +5,9 @@ import interfaces.IVisitor;
 
 public class Jugador implements IElemento {
 
-    public String nombreJugador;
-    public int edad;
-    public String piernaHabil;
+    private String nombreJugador;
+    private int edad;
+    private String piernaHabil;
 
     // Constructor
 

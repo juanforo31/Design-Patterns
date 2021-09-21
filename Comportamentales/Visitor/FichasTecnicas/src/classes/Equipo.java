@@ -7,8 +7,8 @@ import interfaces.IVisitor;
 
 public class Equipo implements IElemento {
 
-    public String nombreEquipo;
-    ArrayList<Jugador> listaJugadores = new ArrayList<>();
+    private String nombreEquipo;
+    private ArrayList<Jugador> listaJugadores = new ArrayList<>();
 
     // Constructor
     public Equipo() {
@@ -56,7 +56,7 @@ public class Equipo implements IElemento {
         // datos equipo
         visitante.visitar(this);
 
-        if (this.listaJugadores != null && this.listaJugadores.size() > 0) {
+        if (this.listaJugadores != null && this.listaJugadores.isEmpty() == false) {
             System.out.println("Jugadores [" + this.listaJugadores.size() + "]");
             // datos jugadores
             for (Jugador jugador : listaJugadores) {
