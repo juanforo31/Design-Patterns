@@ -27,7 +27,7 @@ public class Portero extends Jugador {
     }
 
     // Aceptamos al visitante
-
+    @Override
     public void aceptar(IVisitor visitante) {
         visitante.visitar(this);
     }

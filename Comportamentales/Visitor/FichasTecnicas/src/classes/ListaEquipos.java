@@ -17,8 +17,8 @@ public class ListaEquipos implements IElemento {
     @Override
     public void aceptar(IVisitor visitante) {
 
-        if (this.listaEquipos != null && this.listaEquipos.size() > 0) {
-            System.out.println("Equipos [" + this.listaEquipos.size() + "]" );
+        if (this.listaEquipos != null && this.listaEquipos.isEmpty() == false) {
+            System.out.println("Equipos [" + this.listaEquipos.size() + "]");
             for (Equipo equipo : this.listaEquipos) {
                 equipo.aceptar(visitante);
             }

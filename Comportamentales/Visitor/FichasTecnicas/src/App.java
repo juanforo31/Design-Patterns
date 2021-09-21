@@ -5,10 +5,9 @@ import classes.Equipo;
 import classes.ListaEquipos;
 import classes.MedioCampista;
 import classes.Portero;
-// import classes.Jugador;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         // LIsta donde estaran los equipos
         ListaEquipos listaEquipos = new ListaEquipos();
@@ -32,8 +31,6 @@ public class App {
         MedioCampista mediocampista2 = new MedioCampista("Paul Pogba", 28, "ambidiestro", 6);
         Delantero delantero2 = new Delantero("Cristiano Ronaldo", 36, "Derecho", 33);
 
-        // Jugador jugador1Equipo2 = new Jugador("Samuel", 10, "Izquierda");
-
         // Agregar jugadores a cada equipo
         equipo1.agregarPortero(portero1);
         equipo1.agregarDefensa(defensa1);
@@ -45,8 +42,6 @@ public class App {
         equipo2.agregarMedioCampista(mediocampista2);
         equipo2.agregarDelantero(delantero2);
 
-        // equipo2.agregarJugador(jugador1Equipo2);
-
         // Agregar equipos a la lista de Equipos
 
         listaEquipos.agregarEquipos(equipo1);
@@ -54,5 +49,6 @@ public class App {
 
         // Ejecutamos el metodo aceptar
         listaEquipos.aceptar(new CrearTarjeta());
+
     }
 }
