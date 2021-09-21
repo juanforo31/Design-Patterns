@@ -2,6 +2,7 @@ import classes.CrearTarjeta;
 import classes.Defensa;
 import classes.Delantero;
 import classes.Equipo;
+import classes.Jugador;
 import classes.ListaEquipos;
 import classes.MedioCampista;
 import classes.Portero;
@@ -20,6 +21,7 @@ public class App {
         equipo2.setNombreEquipo("Manchester United");
 
         // Jugadores Equipo 1
+        Jugador jugador1 = new Jugador("Juan", 21, "Derecho");
         Portero portero1 = new Portero("Keylor Navas", 34, "Derecho", 128);
         Defensa defensa1 = new Defensa("Sergio Ramos", 35, "Derecho", 112);
         MedioCampista mediocampista1 = new MedioCampista("Ángel Di María", 33, "izquierdo", 13);
@@ -32,6 +34,7 @@ public class App {
         Delantero delantero2 = new Delantero("Cristiano Ronaldo", 36, "Derecho", 33);
 
         // Agregar jugadores a cada equipo
+        equipo1.agregarJugador(jugador1);
         equipo1.agregarPortero(portero1);
         equipo1.agregarDefensa(defensa1);
         equipo1.agregarMedioCampista(mediocampista1);

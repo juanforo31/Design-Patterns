@@ -12,7 +12,7 @@ public class Defensa extends Jugador {
         this.intercepcionPases = 0;
     }
 
-    public Defensa(String nombreJugador, int edad, String piernaHabil,int intercepcionPases) {
+    public Defensa(String nombreJugador, int edad, String piernaHabil, int intercepcionPases) {
         super(nombreJugador, edad, piernaHabil);
         this.intercepcionPases = intercepcionPases;
     }

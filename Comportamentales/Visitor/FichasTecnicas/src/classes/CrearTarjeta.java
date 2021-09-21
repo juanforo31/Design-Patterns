@@ -23,7 +23,10 @@ public class CrearTarjeta implements IVisitor {
 
     @Override
     public void visitar(Jugador jugador) {
-        // todo
+        System.out.println(LINES);
+        System.out.println(ANSI_GREEN + "Sin posición" + ANSI_RESET);
+        System.out.println(NOMBRE + jugador.getNombreJugador());
+        System.out.println(EDAD + jugador.getEdad());
     }
 
     @Override
