@@ -12,11 +12,11 @@ public interface IVisitor {
 
     void visitar(Jugador jugador);
 
-    public void visitar(Portero portero);
+    void visitar(Portero portero);
 
-    public void visitar(Defensa defensa);
+    void visitar(Defensa defensa);
 
-    public void visitar(MedioCampista medioCampista);
+    void visitar(MedioCampista medioCampista);
 
-    public void visitar(Delantero delantero);
+    void visitar(Delantero delantero);
 }
