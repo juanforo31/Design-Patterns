@@ -10,7 +10,7 @@ import classes.Portero;
 public class App {
     public static void main(String[] args) {
 
-        // LIsta donde estaran los equipos
+        // Lista donde estaran los equipos
         ListaEquipos listaEquipos = new ListaEquipos();
 
         // Equipos
