@@ -10,7 +10,7 @@ public class Pfizer extends Vacuna {
         this.numero_dosis = Pfizer.numeroDosis;
     }
 
-    public Pfizer(String cantidad_por_dosis, int numero_dosis, String siguiente_dosis, int existencias) {
+    public Pfizer(String cantidad_por_dosis, String siguiente_dosis, int existencias) {
         super(Pfizer.nombreVacuna, cantidad_por_dosis, Pfizer.numeroDosis, siguiente_dosis, existencias);
     }
 

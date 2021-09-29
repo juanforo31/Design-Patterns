@@ -4,5 +4,9 @@ public interface IObserver {
 
     void update();
 
-    void alerta();
+    void alertaMenosCien();
+
+    void alertaMenos50();
+
+    void alertaSinExistencias();
 }

@@ -2,6 +2,9 @@ package observador;
 
 public class ObservadorConsola implements IObserver {
 
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
+
     private IObservable observable;
 
     public ObservadorConsola(IObservable observable) {
@@ -11,14 +14,28 @@ public class ObservadorConsola implements IObserver {
 
     @Override
     public void update() {
-        // System.out.println(" AQUI " + observable.toString());
         observable.verExistencias();
     }
 
     @Override
-    public void alerta() {
-        System.out.println(" ALERTA :: Quedan menos de 100 vacunas de " + observable.toString());
-        // observable.verExistencias();
+    public void alertaMenosCien() {
+
+        System.out.println(ANSI_RED + "ALERTA :: Quedan menos de 100 vacunas de " + observable.toString() + ANSI_RESET);
+
+    }
+
+    @Override
+    public void alertaMenos50() {
+
+        System.out.println(ANSI_RED + "ALERTA :: Quedan menos de 50 vacunas de " + observable.toString() + ANSI_RESET);
+
+    }
+
+    @Override
+    public void alertaSinExistencias() {
+
+        System.out.println(ANSI_RED + "ALERTA :: No quedan vacunas de " + observable.toString() + ANSI_RESET);
+
     }
 
 }

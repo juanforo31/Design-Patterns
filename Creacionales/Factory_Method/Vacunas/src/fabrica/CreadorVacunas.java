@@ -2,6 +2,8 @@ package fabrica;
 
 import vacunas.Astrazeneca;
 import vacunas.IVacuna;
+import vacunas.Janssen;
+import vacunas.Moderna;
 import vacunas.Pfizer;
 
 public class CreadorVacunas extends Fabrica {
@@ -23,6 +25,14 @@ public class CreadorVacunas extends Fabrica {
 
             case ASTRAZENECA:
                 objeto = new Astrazeneca();
+                break;
+
+            case JANSSEN:
+                objeto = new Janssen();
+                break;
+
+            case MODERNA:
+                objeto = new Moderna();
                 break;
 
             default:

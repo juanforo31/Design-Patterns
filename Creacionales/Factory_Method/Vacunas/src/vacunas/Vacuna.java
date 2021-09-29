@@ -13,6 +13,10 @@ public class Vacuna implements IVacuna {
     public String siguiente_dosis;
     public int existencias;
 
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_RESET = "\u001B[0m";
+
     private ArrayList<IObserver> observadores;
 
     public Vacuna() {
@@ -90,30 +94,35 @@ public class Vacuna implements IVacuna {
         System.out.println("");
 
         if (cantidadActualizada <= -1) {
-            System.out.println("no hay dosis suficientes");
-            System.out.println("Las existencias actuales son: " + cantidadActual);
+            System.out.println(ANSI_YELLOW + "No hay dosis suficientes \n" + "Las existencias actuales son: "
+                    + cantidadActual + ANSI_RESET);
 
         } else {
             this.setExistencias(cantidadActualizada);
-            System.out.println("Las cantidad actual de vacunas es: " + this.getExistencias());
+            System.out.println("La cantidad actual de vacunas es: " + this.getExistencias());
         }
 
         this.notificar();
 
-        if (this.getExistencias() <= 100) {
-            notificarAlerta();
+        if (this.getExistencias() == 0) {
+            notificarAlertaSinExistencias();
+        } else if (this.getExistencias() <= 50) {
+            notificarAlertaMenosCincuenta();
+        } else if (this.getExistencias() <= 100) {
+            notificarAlertaMenosCien();
         }
     }
 
     @Override
     public void verInfo() {
-        System.out.println("Nombre" + this.getNombre() + "Cantidad de dosis" + this.getCantidad_por_dosis()
-                + "Numero de dosis" + this.getNumero_dosis() + "Siguiente_ dosis" + this.getSiguiente_dosis()
-                + "Existencias" + this.getExistencias());
+        System.out.println("Nombre " + this.getNombre() + " Cantidad de dosis " + this.getCantidad_por_dosis()
+                + "Numero de dosis " + this.getNumero_dosis() + " Siguiente_ dosis " + this.getSiguiente_dosis()
+                + " Existencias " + this.getExistencias());
 
     }
 
     // Patrón de diseño observer
+
     @Override
     public void adicionarObservador(IObserver observer) {
         this.observadores.add(observer);
@@ -126,8 +135,10 @@ public class Vacuna implements IVacuna {
 
     @Override
     public void verExistencias() {
-        System.out.println("");
-        System.out.println("Nombre " + this.getNombre() + " Existencias " + this.getExistencias() + " vacunas");
+
+        System.out.println(
+                ANSI_PURPLE + "Hay " + this.getExistencias() + " vacunas de " + this.getNombre() + "\n" + ANSI_RESET);
+
     }
 
     @Override
@@ -142,10 +153,24 @@ public class Vacuna implements IVacuna {
         }
     }
 
-    private void notificarAlerta() {
+    private void notificarAlertaMenosCien() {
         for (Iterator<IObserver> it = this.observadores.iterator(); it.hasNext();) {
             IObserver iObserver = it.next();
-            iObserver.alerta();
+            iObserver.alertaMenosCien();
+        }
+    }
+
+    private void notificarAlertaMenosCincuenta() {
+        for (Iterator<IObserver> it = this.observadores.iterator(); it.hasNext();) {
+            IObserver iObserver = it.next();
+            iObserver.alertaMenos50();
+        }
+    }
+
+    private void notificarAlertaSinExistencias() {
+        for (Iterator<IObserver> it = this.observadores.iterator(); it.hasNext();) {
+            IObserver iObserver = it.next();
+            iObserver.alertaSinExistencias();
         }
     }
 
